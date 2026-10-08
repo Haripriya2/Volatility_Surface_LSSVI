@@ -39,7 +39,3 @@ For production data, you would additionally handle bid/ask spreads,
 forward/discount construction, vega/liquidity weighting, bad quotes,
 butterfly arbitrage, calendar arbitrage, wing extrapolation, and expiry
 interpolation.
-
-Note: this is SSVI (Surface SVI). If by LSSVI you mean a specific
-implementation used by ICE, use its exact definition rather than assuming
-it is identical to SSVI.
