@@ -13,12 +13,12 @@ def calibrate_ssvi(quotes):
     Tvals=np.sort(quotes["T"].unique()); n=len(Tvals)
     theta0=[]
     for T in Tvals:
-        s=quotes[quotes.T==T]
+        s=quotes[quotes["T"]==T]
         j=(s.log_moneyness.abs()).idxmin()
         theta0.append(float(s.loc[j,"true_iv"])**2*T)
     theta0=np.array(theta0)
     k=quotes.log_moneyness.to_numpy()
-    T=quotes.T.to_numpy()
+    T=quotes["T"].to_numpy()
     wobs=quotes.true_iv.to_numpy()**2*T
     idx=np.searchsorted(Tvals,T)
 
