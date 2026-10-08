@@ -25,17 +25,16 @@ pip install -r requirements.txt
 python calibrate_ssvi.py
 python plot_surface.py
 
-## Important interview point
+## Notes
 
 Newton-Raphson is normally used to invert option prices to implied
-volatility. SSVI is then a parametric model for the total-variance surface.
-Its parameters are obtained through nonlinear calibration, not by choosing
-between Newton-Raphson and cubic splines.
+volatility. SSVI (a parametric model) is then used to construct the total-variance surface.
+Its parameters are obtained through nonlinear calibration (least squares method).
 
 The synthetic data were generated with approximately:
 rho=-0.72, eta=0.72, gamma=0.50.
 
-For production data, you would additionally handle bid/ask spreads,
+For production data, we would additionally need to handle bid/ask spreads,
 forward/discount construction, vega/liquidity weighting, bad quotes,
 butterfly arbitrage, calendar arbitrage, wing extrapolation, and expiry
 interpolation.
